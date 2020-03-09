@@ -35,29 +35,29 @@ let DogModel = {};
 // default is the default value if one is not provided
 // match is the format to match done through regex
 const DogSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        trim: true,
-        unique: true,
-    },
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+    unique: true,
+  },
 
-    breed: {
-        type: String,
-        trim: true,
-        required: true,
-    },
+  breed: {
+    type: String,
+    trim: true,
+    required: true,
+  },
 
-    age: {
-        type: Number,
-        min: 0,
-        required: true,
-    },
+  age: {
+    type: Number,
+    min: 0,
+    required: true,
+  },
 
-    createdData: {
-        type: Date,
-        default: Date.now,
-    },
+  createdData: {
+    type: Date,
+    default: Date.now,
+  },
 
 });
 
@@ -73,11 +73,11 @@ const DogSchema = new mongoose.Schema({
 // not a method that uses or returns instance variables
 // That is, these are used when you don't need an object, just a function to call.
 DogSchema.statics.findByName = (name, callback) => {
-    const search = {
-        name,
-    };
+  const search = {
+    name,
+  };
 
-    return DogModel.findOne(search, callback);
+  return DogModel.findOne(search, callback);
 };
 
 // Create the cat model based on the schema. You provide it with a custom discriminator
